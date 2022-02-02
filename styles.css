@@ -3,12 +3,13 @@
   padding: 0;
   color: white;
   background-color: hsl(0, 0%, 7%);
+  font-family: "Open Sans", sans-serif;
 }
 
 header {
   width: 100vw;
   height: 60px;
-  background-color: hsl(0, 0%, 18.2%);
+  background-color: #2e2e2e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,21 +29,38 @@ header {
 }
 
 input {
-  padding: 2px 6px;
-  border: 1px solid hsl(0, 0%, 18.2%);
+  border: 1px solid #2e2e2e;
   border-right: none;
-  border-radius: 2px 0 0 2px;
-  box-shadow: inset 0 1px 2px;
+  border-radius: 2px;
   height: 40px;
   width: 400px;
+  padding: 2px 6px;
 }
 
 .submit-btn {
-  border: 1px solid hsl(0, 0%, 18.2%);
-  background-color: hsla(0, 0%, 100%, 0.08);
-  border-radius: 0 2px 2px 0;
-  cursor: pointer;
+  border: 1px solid #2e2e2e;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
   height: 40px;
   width: 64px;
-  margin: 0;
+  padding: 2px 6px;
+}
+
+#video-section {
+  margin-top: 15px;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.video-thumbnail {
+  width: 360px;
+  height: 250px;
+}
+
+.video-text {
+  width: 360px;
+  height: 100px;
 }

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link  href="styles.css" rel="stylesheet">
     <title>Youtube API search</title>
 </head>
@@ -15,16 +18,30 @@
                 <form action="input">
                     <input type="text" id="seach-bar" placeholder="Search">
                 </form>
-                <button class="submit-btn">
-                    <span>🔍</span>
-                </button>
+                <button class="submit-btn">🔍</button>
             </div>
         </div>
     </header>
 
     <!-- video render section -->
     <section id="video-section">
+        <div class="video-card">
+            <div class="video-thumbnail">
 
+            </div>
+            <div class="video-text">
+                <div>
+                    <h3>title</h3>
+                </div>
+                <div>
+                    <h3>UserName</h3>
+                </div>
+                <div>
+                    <div>views</div>
+                    <div>Date</div>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
