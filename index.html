@@ -15,33 +15,54 @@
     <header >
         <div class="header">
             <div class="form">
-                <form action="input">
-                    <input type="text" id="seach-bar" placeholder="Search">
+                <form id="search-form" action="input">
+                    <input type="text" id="search-bar" placeholder="Search">
                 </form>
-                <button class="submit-btn">🔍</button>
             </div>
         </div>
     </header>
 
     <!-- video render section -->
-    <section id="video-section">
-        <div class="video-card">
-            <div class="video-thumbnail">
-
-            </div>
-            <div class="video-text">
-                <div>
-                    <h3>title</h3>
-                </div>
-                <div>
-                    <h3>UserName</h3>
-                </div>
-                <div>
-                    <div>views</div>
-                    <div>Date</div>
-                </div>
-            </div>
-        </div>
+    <section id="video-divs">
+        
     </section>
+    <script>
+        var searchForm = document.querySelector('#search-form');
+        searchForm.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var res = JSON.parse(xhttp.responseText);
+                    console.log(res);
+                    var videoData = res.items.map(function (item) {
+                        return item.snippet
+                    });
+
+                    var container = document.querySelector('#video-divs')
+                    container.innerHTML = '';
+                    videoData.forEach(function (video) {
+                        console.log(video);
+                        var videoDiv = document.createElement('div');
+                        videoDiv.classList.add('video-div')
+                        videoDiv.innerHTML = `
+                            <img src=${video.thumbnails.high.url}>
+                            <h4>${video.title}</h4>
+                            <p>${video.channelTitle}</p>
+                            <p>${new Date(video.publishTime).toLocaleDateString()}</p>
+                `;
+                        container.appendChild(videoDiv)
+                    })
+                }
+            };
+            var textValue = document.querySelector('#search-bar').value;
+            xhttp.open("GET", `[API goes here, removed for privacy]`, true);
+            xhttp.send();
+        })
+
+        
+    </script>
 </body>
 </html>
+
